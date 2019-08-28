@@ -13,7 +13,7 @@
         'UPDATE users SET first_name = :first_name, last_name = :last_name, age = :age where id = :id;'
       );
 
-      $statement->execute(["first_name"=>$first_name, "last_name"=>$last_name, "age"=>$age]);
+      $statement->execute(["first_name"=>$first_name, "last_name"=>$last_name, "age"=>$age, "id"=>$id]);
       echo "Updated your info.";
 
     } catch(PDOException $e) {
@@ -53,5 +53,6 @@
       <input type="text" name="age" value="<?php echo $results[0]->age?>"><br>
       <button type="submit">Save</button>
     </form>
+    <a href="/">Go back</a>
   </body>
 </html>
